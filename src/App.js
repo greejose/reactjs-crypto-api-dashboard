@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Dashboard from "./components/Dashboard";
 import { formatData } from "./utils";
 import "./styles.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   const [currencies, setcurrencies] = useState([]);
@@ -100,17 +101,14 @@ export default function App() {
 
     setpair(e.target.value);
   };
+
   return (
     <div className="container">
       {
-        <select name="currency" value={pair} onChange={handleSelect}>
-          {currencies.map((cur, idx) => {
-            return (
-              <option key={idx} value={cur.id}>
-                {cur.display_name}
-              </option>
-            );
-          })}
+        <select id="currency" name="currency" value={pair} onClick={handleSelect}>
+          <option selected value={'ETH-USD'}>
+            {'ETH/USD'}
+          </option> 
         </select>
       }
       <Dashboard price={price} data={pastData} />
