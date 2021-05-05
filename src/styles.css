@@ -1,0 +1,47 @@
+body {
+  background-color: #282c34 !important;
+}
+
+.container {
+  margin: auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  /* height: 100vh; */
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 80vh; */
+}
+
+.chart-container {
+  width: 80%;
+  height: 100%;
+}
+
+#ethereum-icon {
+  max-width: 35px;
+  vertical-align: middle;
+}
+
+.crypto-logo {
+  width:100%;
+  height:auto;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+}
+
+h2 {
+  color: #fff;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color:green;
+}
