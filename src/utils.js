@@ -5,8 +5,8 @@ export const formatData = (data) => {
         {
           label: "Price",
           data: [],
-          backgroundColor: "rgb(255, 99, 132, 0.8)",
-          borderColor: "rgba(255, 99, 132, 0.2)",
+          backgroundColor: "rgb(195, 245, 60, 0.8)",
+          borderColor: "rgba(195, 245, 60, 0.4)",
           fill: false
         }
       ]
@@ -15,11 +15,13 @@ export const formatData = (data) => {
     let dates = data.map((val) => {
       const ts = val[0];
       let date = new Date(ts * 1000);
-      let day = date.getDate();
-      let month = date.getMonth() + 1;
-      let year = date.getFullYear();
-  
-      let final = `${month}-${day}-${year}`;
+      // let day = date.getDate();
+      // let month = date.getMonth() + 1;
+      // let year = date.getFullYear();
+      let time = date.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+      let final = `${time}`;
+      // let final = `${month}-${day}-${year} ${time}`;
+      
       return final;
     });
   

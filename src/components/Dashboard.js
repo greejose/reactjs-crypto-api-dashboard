@@ -11,14 +11,14 @@ function Dashboard({ price, data }) {
       mode: "index"
     },
     responsive: true,
-    maintainAspectRatio: false
+    maintainAspectRatio: true,
   };
   if (price === "0.00") {
     return <h2>Click the box above</h2>;
   }
   const initialInvestment = 199.86;
   const totalValue = (price * .060606).toFixed(2);
-  const openPl = ((totalValue/initialInvestment) - 1).toFixed(2);
+  const openPl = (((totalValue/initialInvestment) - 1) * 100).toFixed(2);
   return (
     <div className="dashboard">
       <img src={crypto} className="crypto-logo" alt="logo" />
@@ -34,12 +34,13 @@ function Dashboard({ price, data }) {
         <tbody>
           <tr>
             <td><img src={ethereum} id='ethereum-icon' className='ethereum-icon' alt='ethereum icon'/>Ethereum</td>
-            <td>${price}</td>
+            <td>${(price * 1).toFixed(2)}</td>
             <td className={Math.sign(openPl) === -1 ? 'red-text' : 'green-text'}>{openPl}%</td>
             <td>${totalValue}</td>
           </tr>
         </tbody>
       </Table>
+      <Line data={data} options={opts} />
     </div>
   );
 }
