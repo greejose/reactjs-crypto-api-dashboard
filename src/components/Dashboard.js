@@ -19,6 +19,7 @@ function Dashboard({ price, data }) {
   const initialInvestment = 199.86;
   const totalValue = (price * .060606).toFixed(2);
   const openPl = (((totalValue/initialInvestment) - 1) * 100).toFixed(2);
+  document.title = 'ETH - $'.concat((price * 1).toFixed(2));
   return (
     <div className="dashboard">
       <img src={crypto} className="crypto-logo" alt="logo" />
