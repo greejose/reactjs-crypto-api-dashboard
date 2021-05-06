@@ -64,7 +64,7 @@ export default function App() {
     let jsonMsg = JSON.stringify(msg);
     ws.current.send(jsonMsg);
 
-    let historicalDataURL = `${url}/products/${pair}/candles?granularity=86400`;
+    let historicalDataURL = `${url}/products/${pair}/candles?granularity=60`;
     const fetchHistoricalData = async () => {
       let dataArr = [];
       await fetch(historicalDataURL)
