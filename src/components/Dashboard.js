@@ -16,8 +16,8 @@ function Dashboard({ price, data }) {
   if (price === "0.00") {
     return <h2>Click the box above</h2>;
   }
-  const investment = 219.86;
-  const quantity = (price * 0.067746).toFixed(2);
+  const investment = 239.86;
+  const quantity = (price * 0.072594).toFixed(2);
   const openPl = (((quantity/investment) - 1) * 100).toFixed(2);
   document.title = 'ETH - $'.concat((price * 1).toFixed(2));
   return (
